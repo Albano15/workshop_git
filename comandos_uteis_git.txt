@@ -1,0 +1,61 @@
+==========================================================
+🚀 GUIA DE SOBREVIVÊNCIA GIT - COMANDOS ESSENCIAIS
+==========================================================
+
+1. 🔍 INSPEÇÃO E STATUS
+----------------------------------------------------------
+git status            # Status detalhado (o que está pendente)
+git status -s         # Status curto (compacto para o terminal)
+git diff              # Ver mudanças nos arquivos (não commitados)
+git log --oneline     # Histórico simplificado em uma linha
+git log --graph --all # Árvore visual de todas as branches
+
+2. 🔀 MERGE E CONFLITOS
+----------------------------------------------------------
+git merge <branch>    # Traz o código da branch X para a atual
+git merge --abort      # DEU RUIM: Cancela tudo e volta ao estado anterior
+git merge --continue   # APÓS RESOLVER CONFLITOS: Finaliza o merge
+
+3. 🍒 CHERRY-PICK (Pinçar commits)
+----------------------------------------------------------
+git cherry-pick <hash> # Traz apenas UM commit específico de outra branch
+git log --all          # Use para achar o hash do commit do colega
+
+4. 📦 STASH (Gaveta Temporária)
+----------------------------------------------------------
+git stash              # Guarda mudanças "sujas" para limpar a branch
+git stash pop          # Recupera o que estava guardado e limpa a gaveta
+
+5. 📥 PULL E SINCRONIZAÇÃO
+----------------------------------------------------------
+git pull origin <banc> # Baixa e mescla (padrão)
+git pull --rebase      # Baixa e coloca seus commits no topo da fila
+git fetch origin       # Só "espia" o que tem no server sem baixar nada
+
+6. ⏪ VIAGEM NO TEMPO (ROLLBACK & RESETS)
+----------------------------------------------------------
+# CASO A: Ainda NÃO dei Push (Local)
+git restore <file>     # Descarta mudanças de um arquivo específico
+git restore .          # Descarta TODAS as mudanças locais (CUIDADO!)
+git reset --hard HEAD~1 # APAGA o último commit/merge (volta 1 posição)
+
+# CASO B: Já dei Push (Servidor/Produção)
+git revert <hash>      # Faz um commit para um commit anterior que funcionava criando um novo "anti-commit"
+git revert -m 1 HEAD   # DESFAZ UM MERGE: Mantém o fluxo da main (linha 1) e anula o que veio da outra branch (develop).
+
+# CASO C: "Fiz caca" e o erro já está no GitHub (Apagar Histórico)
+Use este caso apenas se você quiser que o commit/merge desapareça do mapa.
+
+git reset --hard HEAD~1       # Apaga o commit atual e volta 1 commit atrás (pode ser 2 ou 3...)
+git push origin main --force  # Sobe para o remoto
+
+Remoto: Força o GitHub a aceitar a sua versão "limpa". Isso apaga o commit problemático do servidor para todo mundo.
+⚠️ PERIGO: Avise a todos pois o histórico deles vai ficar diferente do servidor e eles podem ter erros de "divergência" ao dar pull.
+
+7. 🛡️ COMANDOS DE CRISE
+----------------------------------------------------------
+git push --force       # Força sua versão local no servidor (PERIGOSO! EVITE AO MÁXIMO E AVISE)
+git checkout -b backup # Cria uma branch de segurança antes de tentar um Reset
+git reflog             # "O seguro do seguro": Mostra tudo o que você alterou/excluiu
+                       # O Git não deleta nada de verdade. Se você commitou uma vez, o reflog acha pra você.
+==========================================================
