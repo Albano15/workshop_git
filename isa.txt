@@ -1,11 +1,14 @@
 Material da ISA (Os Braços)
 Ação: Isa vai mudar os braços para algo mais "forte".
 
-1. Criar e Publicar
+1. Criar a branch develop localmente e rastrear ela remotamente
+git switch -c develop origin/develop
+
+2. Criar e Publicar
 git switch -c feat/bracos
 git push -u origin feat/bracos
 
-2. Código para substituir a LINHA 2 do robo.txt
+3. Código para substituir a LINHA 2 do robo.txt
 
  \==-|     \     |      |     /     |----|~~/
   |   |      |    |      |    |      |____/~/
@@ -18,11 +21,11 @@ git push -u origin feat/bracos
    |_|        |     |  |     |
               |_____|  |_____|
 
-3. Commit e Push
+4. Commit e Push
 git add robo.txt
 git commit -m "feat: add braços do robo"
 git push
 
-4. Resolver o conflito
+5. Resolver o conflito
 
-5. Após resolver conflito faça o commit e push
+6. Após resolver conflito faça o commit e push

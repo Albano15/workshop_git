@@ -1,11 +1,14 @@
-Material da ANA (A Cabeça)
-Ação: Ana vai adicionar antenas no robô.
+Material da ANA (Parte Superior)
+Ação: Ana vai adicionar a parte superior do robô.
 
-1. Criar e Publicar
+1. Criar a branch develop localmente e rastrear ela remotamente
+git switch -c develop origin/develop
+
+2. Criar e Publicar
 git switch -c feat/antena
 git push -u origin feat/antena
 
-2. Código para substituir a LINHA 1 do robo.txt
+3. Código para substituir a LINHA 1 do robo.txt
 
           |_|_|
           |_|_|              _____
@@ -17,11 +20,11 @@ git push -u origin feat/antena
  
              
 
-3. Commit e Push
+4. Commit e Push
 git add robo.txt
 git commit -m "feat: add cabeça do robo"
 git push
 
-4. Resolver o conflito
+5. Resolver o conflito
 
-5. Após resolver conflito faça o commit e push
+6. Após resolver conflito faça o commit e push
