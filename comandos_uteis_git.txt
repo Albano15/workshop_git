@@ -1,0 +1,59 @@
+==========================================================
+🚀 GUIA DE SOBREVIVÊNCIA GIT - COMANDOS ESSENCIAIS
+==========================================================
+
+1. 🔍 INSPEÇÃO E STATUS
+----------------------------------------------------------
+git status            # Status detalhado
+git status -s         # Status curto/compacto
+git diff              # Ver o que mudou nos arquivos (não commitados)
+git diff --staged     # Ver o que está no 'add' pronto para commit
+git log --oneline     # Histórico simplificado
+git log --graph --all # Histórico visual com ramificações (branches)
+
+2. 🔀 MERGE E CONFLITOS
+----------------------------------------------------------
+git merge <nome-branch>    # Tenta mesclar a branch X na atual
+git merge --abort          # DEU RUIM: Cancela o merge e volta ao estado anterior
+git merge --continue       # APÓS RESOLVER CONFLITOS: Finaliza o merge
+
+3. 🍒 CHERRY-PICK (Pegar commits específicos)
+----------------------------------------------------------
+git cherry-pick <hash>     # Traz um commit específico para sua branch
+git cherry-pick --abort    # Cancela o cherry-pick em caso de conflito
+git cherry-pick --continue # Continua após resolver o conflito
+
+4. 📦 STASH (Gaveta Temporária)
+----------------------------------------------------------
+git stash             # Esconde as mudanças atuais para limpar o diretório
+git stash list        # Lista tudo o que está guardado na "gaveta"
+git stash pop         # Tira da gaveta e aplica de volta (apaga da lista)
+git stash apply       # Aplica o stash mas mantém uma cópia na lista
+git stash drop        # Apaga um stash específico
+
+5. 📥 PULL E SINCRONIZAÇÃO
+----------------------------------------------------------
+git pull origin <branch>         # Busca e mescla (padrão)
+git pull --rebase origin <nome>  # Busca e aplica seus commits "em cima" das novidades
+git pull --ff-only               # Só aceita o pull se não houver conflito (Fast-forward)
+git fetch origin                 # Baixa as novidades do server sem mexer no seu código
+
+6. ⏪ DESFAZENDO COISAS (ROLLBACK)
+----------------------------------------------------------
+git checkout <arquivo>   # Descarta mudanças locais em um arquivo
+git restore .            # Descarta TODAS as mudanças locais não commitadas
+git revert <hash>        # Cria um NOVO commit que desfaz as mudanças do commit citado
+git reset --soft HEAD~1  # Desfaz o último commit mas mantém os arquivos no 'add'
+git reset --hard HEAD~1  # APAGA o último commit e todas as mudanças (CUIDADO!)
+
+7. 🛠️ DICAS DE OURO
+----------------------------------------------------------
+# Ver quem alterou cada linha de um arquivo:
+git blame <nome-do-arquivo>
+
+# Limpar arquivos que não fazem parte do Git (não rastreados):
+git clean -fd
+
+# Renomear a branch atual:
+git branch -m <novo-nome>
+==========================================================
