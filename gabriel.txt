@@ -1,0 +1,21 @@
+Material do GABRIEL (Multiplicação)
+1. Criar e Publicar
+git switch -c feat/pernas
+git push -u origin feat/pernas
+
+2. Código para substituir a LINHA 3 do robo.txt
+              (_____)  (_____)
+              |     |  |     |
+              |     |  |     |
+              |/~~~\|  |/~~~\|
+              /|___|\  /|___|\
+             <_______><_______>
+
+3. Commit e Push
+git add robo.txt
+git commit -m "feat: add pernas do robo"
+git push
+
+4. Resolver o conflito
+
+5. Após resolver conflito faça o commit e push

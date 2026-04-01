@@ -1,0 +1,27 @@
+Material da ANA (A Cabeça)
+Ação: Ana vai adicionar antenas no robô.
+
+1. Criar e Publicar
+git switch -c feat/antena
+git push -u origin feat/antena
+
+2. Código para substituir a LINHA 1 do robo.txt
+
+          |_|_|
+          |_|_|              _____
+          |_|_|     ____    |*_*_*|
+ _______   _\__\___/ __ \____|_|_   _______
+/ ____  |=|      \  <_+>  /      |=|  ____ \
+~|    |\|=|======\\______//======|=|/|    |~
+ |_   |    \      |      |      /    |    |
+ 
+             
+
+3. Commit e Push
+git add robo.txt
+git commit -m "feat: add cabeça do robo"
+git push
+
+4. Resolver o conflito
+
+5. Após resolver conflito faça o commit e push
