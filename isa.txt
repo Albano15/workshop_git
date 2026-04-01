@@ -24,7 +24,7 @@ git push -u origin feat/bracos
 4. Commit e Push
 git add robo.txt
 git commit -m "feat: add braços do robo"
-git push
+
 
 5. Resolver o conflito
 
